@@ -1,0 +1,231 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.1.5, 1 December 2018) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\PassOptionsToPackage{lowtilde}{url}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[9pt,a4paper,ragged2e, normalphoto]{altacv}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Carlito}
+\else
+  % If using pdflatex:
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+  \usepackage[hidelinks]{hyperref}
+\fi
+
+\makeatletter
+\renewcommand{\makecvheader}{%
+  \begingroup
+    \begin{minipage}{0.7\linewidth} % <=================================
+      \raggedright\color{emphasis}%
+      {\Huge\bfseries\MakeUppercase{\@name}\par}
+      \medskip
+      {\large\bfseries\color{accent}\@tagline\par}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.25\linewidth} % <================================
+      {\raggedright\small\bfseries\@personalinfo\par}
+    \end{minipage}
+  \endgroup\medskip
+}
+
+\renewenvironment{fullwidth}{%
+  \begin{adjustwidth}{}
+  {\dimexpr-\marginparwidth-\marginparsep-2em\relax} % <================ added -2em
+  }
+  {\end{adjustwidth}}
+\makeatother
+
+
+
+% Change the colours if you want to
+\definecolor{IFBlue}{HTML}{0F6688}
+\definecolor{IFDarkBlue}{HTML}{00425C}
+\definecolor{IFMediumBlue}{HTML}{17739A}
+\definecolor{IFLightBlue}{HTML}{228FBD}
+
+\definecolor{IFGrey}{HTML}{6D6E71}
+\definecolor{IFDarkGrey}{HTML}{231F20}
+\definecolor{IFMediumGrey}{HTML}{4D4D4F}
+\definecolor{IFLightGrey}{HTML}{808285}
+
+\colorlet{heading}{IFBlue}
+\colorlet{accent}{IFLightBlue}
+\colorlet{emphasis}{IFMediumGrey}
+\colorlet{body}{IFGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+% \addbibresource{sample.bib}
+
+\begin{document}
+\name\fontsize{11pt}{SHLOK NANGIA}
+\tagline{Software Engineer \& Proud Geek}
+%\photo{2.8cm}{logo}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{\href{mailto:shloknangia@gmail.com}{shloknangia@gmail.com}}
+  \phone{+91-9953055177}
+  \location{New Delhi , INDIA}
+  \linkedin{\href{https://www.linkedin.com/in/shloknangia/}{linkedin.com/shloknangia}}
+  \github{\href{https://github.com/shloknangia}{github.com/shloknangia}}
+  % \homepage{\url{http://fma.if.usp.br/~nickolas}}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[page1sidebar]{Profile Summary}
+
+\begin{itemize}
+    \item 4+ years of experience as a Full Stack Software Engineer, with a focus on leveraging strong technical expertise and creative design sensibility to increase web traffic. 
+    \item Intensive expertise in Angular, React, AngularJS, JavaScript, TypeScript, NodeJS, MongoD, C\# and ASP.Net having implemented web-based platform (Monorepos, n-tier web, mobile web, and responsive design).
+\end{itemize}
+
+\cvsection{PROFESSIONAL EXPERIENCE}
+
+\cvevent{Software Engineer} {Schlumberger, PuTC}{July, 2018 -- Current}{Pune, IN}{}{}
+\begin{itemize}
+ \item Developing Web applications for Data monitoring and visualization based on Angular	2+ framework and INT Geotoolkit to deliver real-time drilling data to clients.
+ \item Designed and developed a responsive and widget adaptable framework which can be accessed on devices of all screen sizes i.e. Data visualization using widgets on Mobile devices
+ \item Designed \& developed angular application using Module Federation approach to support UI Micro Frontends
+ \item Tech Stack Using: Angular, .NET Web API and MongoDB
+\end{itemize}
+
+\divider
+
+\cvevent{Android Application Developer} {BAR CODE INDIA LTD (BCIL)}{June, 2017 -- July 2017}{Faridabad, IN}{}{}
+\begin{itemize}
+ \item Project on Android Based Application “Ride Share” where one could share its ride details and find a companion travelling in the same direction.
+ \item Tech Stack Using: JAVA, XML
+\end{itemize}
+
+\divider
+
+\cvevent{Android Application Developer} {INFOTEL BUSINESS SOLUTIONS LTD}{Dec, 2016 -- Jan 2017}{Gurugram, IN}{}{}
+\begin{itemize}
+ \item Front End Android Application Developer for their running Application WTC (Warranty Tracker And Checker).
+ \item Tech Stack Using: JAVA, XML
+\end{itemize}
+
+\divider
+
+\cvevent{Android Developer} {NHPC LIMITED}{June, 2016 -- July 2016}{Faridabad, IN}{}{}
+\begin{itemize}
+ \item Project on Android Based Employee Search System where one could search employee details based on the combination of 5 fields.
+ \item Tech Stack Using: JAVA, XML
+\end{itemize}
+
+
+\cvsection{Achievements}
+
+\begin{itemize}
+    \item Certified Scrum Master \textsuperscript{\textregistered} (CSM \textsuperscript{\textregistered}) -  \textbf{ \href{https://bcert.me/sgoqtatkm}{Scrum Alliance}} \faChain\hspace{0.5em}
+    \item First Position in Innovista Schlumberger 2020 - \textbf{Schlumberger, PuTC}
+    \item Reward of Excellence -\textbf{Schlumberger, PuTC}
+    \item First Position in Data Ecosystem Hackathon 2019  - \textbf{Schlumberger, PuTC}
+    \item Third Position in Data science Hackathon 2019  - \textbf{Schlumberger, PuTC }
+    \item Merit certificate issued for scoring 100/100 marks in Mathematics in class XII  - \textbf{Education Minister of Delhi}
+    \item Best Academic Student of Science -\textbf{NGFS, Saket}
+%    \item
+\end{itemize}
+
+
+%\cvsection{Organization of Events}
+%
+%\cvevent{Tensorial Reception}{Maruyama, W.; Alves, N. A.; Correa da Silva, R.}{2018 -- 2019}{São Paulo, Brazil}{\url{http://fma.if.usp.br/~nickolas/rt/2018/index.html}}{\url{http://fma.if.usp.br/~nickolas/rt/2019/index.html}}
+%This event consisted in a series of 20 min presentations by (mostly) graduate students about their research projects as a motivation for the Institute's freshmen. 
+%
+%\addnextpagesidebar[-1ex]{page2sidebar}
+%
+%\divider
+%
+%\cvevent{Giants of Physics}{Correa da Silva, R.; Alves, N. A.; Zukanovich Funchal, R. \emph{et al.}}{April 2018 -- May 2019}{São Paulo, Brazil}{\url{http://fma.if.usp.br/~nickolas/gigantes/index.html}}{\url{http://fma.if.usp.br/~nickolas/sagan/index.html}}
+%A series of events in honor to great physicists. Each event consisted in three presentations related, but not restrained, to his work given by graduate students, which were followed by a round table formed by experienced researchers and, finally, a miscellaneous event related to the scientist (a lecture about his life, a movie exhibition, \emph{et cetera}). Details may be found (in portuguese) at the links provided.
+%
+%\divider
+%
+%\cvevent{Jayme Tiomno School in Theoretical Physics}{Alves, N. A.; Tredezini, P. H. T. L.; Maruyama, W.}{2018 -- 2019}{São Paulo, Brazil}{\url{http://fma.if.usp.br/~nickolas/jayme/2018/index.html}}{\url{http://fma.if.usp.br/~nickolas/jayme/2019/index.html}}
+%A winter school organized by students at IFUSP covering topics in Theoretical Physics, Computer Science and Mathematics aimed at undergraduate students.
+%
+%\divider
+%
+%\begin{fullwidth}
+%
+%\cvevent{Dead Physicists Society}{Alves, N. A.}{October 2018 -- June 2019}{São Paulo, Brazil}{\url{http://fma.if.usp.br/~nickolas/dps/index.html}}{}
+%A student driven organization at IFUSP. Some of the events sponsored and/or organized by the DPS were: weekly undergraduate seminars (most of them presented fully in english); the II Jayme Tiomno School in Theoretical Physics; a poster session aimed at 2019 freshmen.
+%
+%I created and directed the organization from October 2018 to June 2019. 
+%
+%\cvsection{Bibliographical Production}
+%
+%\cvevent{An Introduction to \LaTeX}{I Jayme Tiomno School in Theoretical Physics}{July 2019}{São Paulo, Brazil}{http://fma.if.usp.br/~nickolas/jayme/2018/latex.html}{}
+%Workshop presented at the I Jayme Tiomno School in Theoretical Physics, in which I taught students the fundamentals of \LaTeX. 
+%
+%\divider
+%
+%\cvevent{DPS Seminars}{Dead Physicists Society Undergraduate Seminar}{October 2018 -- September 2019}{São Paulo, Brazil}{\url{http://fma.if.usp.br/~nickolas/dps/index.html}}{}
+%I have so far presented six seminars at the Dead Physicists Society Undergraduate Seminars. Two of them were in portuguese and the remaining four in english. More information (titles, abstracts, presentation dates and slideshows or lecture notes) are available at the link provided. 
+%
+%\divider
+%
+%\cvevent{Songs to Solve Electrodynamics to}{Tensorial Reception}{February 2019}{São Paulo, Brazil}{\url{http://fma.if.usp.br/~nickolas/rt/2019/index.html}}{}
+%Presentation given at the 2019 Tensorial Reception about a (not-so) hand-waving approach to Jefimenko's Equations. Both the abstract and the slideshow are available (in portuguese) at the link provided.
+%
+%\divider
+%
+%\cvevent{As Time Goes By - Seeking a Solution to Maxwell's Equations}{DPS Freshmen Poster Session}{February 2019}{São Paulo, Brazil}{\url{http://fma.if.usp.br/~nickolas/pdf/As_Time_Goes_By___Poster.pdf}}{}
+%Poster presented at the 2019 DPS Freshmen Poster Session, regarding a hand-waving approach to Maxwell's and Jefimenko's Equations. The original poster (in portuguese) is available at the provided link.
+
+%\end{fullwidth}
+
+\end{document}

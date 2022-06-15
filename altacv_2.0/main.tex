@@ -1,0 +1,105 @@
+\documentclass[11pt, letterpaper]{altacv}
+
+\geometry{
+    left=1cm,
+    right=9cm,
+    marginparwidth=6.8cm,
+    marginparsep=1.2cm,
+    top=1cm,
+    bottom=1cm
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage[hidelinks]{hyperref}
+
+\makeatletter
+\renewcommand{\makecvheader}{%
+  \begingroup
+    \begin{minipage}{0.6\linewidth} % <=================================
+      \raggedright\color{emphasis}%
+      {\Huge\bfseries\MakeUppercase{\@name}\par}
+      \medskip
+      {\large\bfseries\color{accent}\@tagline\par}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.25\linewidth} % <================================
+      {\raggedright\footnotesize\bfseries\@personalinfo\par}
+    \end{minipage}
+  \endgroup\medskip
+}
+
+\renewenvironment{fullwidth}{%
+  \begin{adjustwidth}{}
+  {\dimexpr-\marginparwidth-\marginparsep-2em\relax} % <================ added -2em
+  }
+  {\end{adjustwidth}}
+\makeatother
+
+\definecolor{DarkBlue}{HTML}{2079C7}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+
+\colorlet{heading}{DarkBlue}
+\colorlet{accent}{DarkBlue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\begin{document}
+
+\name{Johns George Benny}
+\tagline{Senior DSP Firmware Engineer}
+\personalinfo{
+    \email{\href{mailto:jonessos.ben@gmail.com}{jonessos.ben@gmail.com}}
+    \phone{+91 7907697244}
+    \location{Ernakulam, Kerala, India}
+    \linkedin{\href{https://linkedin.com/in/jonessos}{linkedin.com/jonessos}}
+    \github{\href{https://github.com/jonessos}{github.com/jonessos}}
+}
+
+\begin{fullwidth}
+ \makecvheader
+\end{fullwidth}
+
+\cvsection[sidebar]{Profile Summary}
+\begin{itemize}
+\item 3+ years of work experience in the 5G \& Data Center domain
+\item Experienced in Linux, 5G, O-RAN, Middleware, Yocto Project, Application Software, and Software Integration
+\end{itemize}
+
+\cvsection{Experience}
+
+\cvevent{Senior Engineer (SW)}{VVDN Technologies Pvt. Ltd}{Nov 2020 -- Aug 2021}{Kochi, Kerala}
+\cvsubsection{Femtocell \& Macrocell O-RUs}
+\begin{itemize}
+\item Development of system software and ORAN-WG4.MP.0-v02.00.00 compliant applications
+\item Systems design of the unit
+\item Board bring-up
+\item Created the build eco-system for the entire project using GNU Make, Xilinx toolchain, BitBake recipes and version-controlled BSP projects
+\item Integration of third-party software packages and libraries
+\end{itemize}
+
+\vspace{0.5cm}
+
+\cvevent{Engineer (SW)}{VVDN Technologies Pvt. Ltd}{July 2018 -- Nov 2020}{Kochi, Kerala}
+\cvsubsection{PHY Layer Implementation of 5G Repeater}
+\begin{itemize}
+\item End-to-End PHY layer processing from demodulation to channel decoding
+\item Implemented algorithms for phase compensation, channel estimation and equalisation, and channel decoding of PBCH, PDCCH and PDSCH channels
+\item Decoded the MIB obtained after decoding PBCH, DCI\_1\_0 message from PDCCH, and SIB1 message from PDSCH channel
+\item Extracting the tdd-ul-dl-conﬁgCommon field from SIB1 and UPER decoding the L3 data into ASN1 format
+\end{itemize}
+
+\divider
+
+\cvsubsection{Cloud Native TLS Acceleration}
+\begin{itemize}
+\item Validation testing of FPGA designs for implementing accelerated cloud security on AWS f1 instances
+\item Writing bash scripts for testing, and for setting up newly created f1 instances
+\item Writing test application to provide debugging support for customer's proprietary IP
+\item Patching the AWS XDMA driver, and Xilinx QDMA driver
+\item Tcl scripting
+\end{itemize}
+
+\end{document}
